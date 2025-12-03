@@ -52,8 +52,8 @@ const ManagerPanel = () => {
   const assignMutation = useMutation({
     mutationFn: ({ fileId, qaId }: { fileId: string; qaId: string }) =>
       assignFilePair({ filePairId: fileId, qaUserId: qaId }),
-    onSuccess: (response) => {
-      setMessage(response.data?.mode === 'reassigned' ? 'Reassigned successfully' : 'Assigned successfully');
+    onSuccess: () => {
+      setMessage('Assignment recorded');
       setFileToAssign('');
       setQaTarget('');
       setTeamForAssign('');
